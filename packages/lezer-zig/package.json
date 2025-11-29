@@ -1,6 +1,6 @@
 {
 	"name": "@ndim/lezer-zig",
-	"version": "0.0.0",
+	"version": "0.1.0",
 	"description": "Lezer grammar for the Zig language",
 	"keywords": [
 		"zig",
@@ -22,6 +22,10 @@
 	"author": "Joel Gustafson",
 	"type": "module",
 	"main": "lib/index.js",
+	"exports": {
+		".": "./lib/index.js",
+		"./terms": "./lib/index.terms.js"
+	},
 	"scripts": {
 		"build": "lezer-generator src/zig.grammar --typeScript --output src/index.ts"
 	},
