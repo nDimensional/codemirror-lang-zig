@@ -1,7 +1,7 @@
 {
 	"name": "@ndim/codemirror-lang-zig",
 	"type": "module",
-	"version": "0.0.0",
+	"version": "0.1.0",
 	"description": "Zig language support for Codemirror",
 	"keywords": [
 		"zig",
@@ -22,6 +22,6 @@
 		".": "./lib/index.js"
 	},
 	"dependencies": {
-		"lezer-zig": "^0.0.0"
+		"lezer-zig": "^0.1.0"
 	}
 }
