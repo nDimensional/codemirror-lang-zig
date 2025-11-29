@@ -1,0 +1,37 @@
+{
+	"name": "@ndim/lezer-zig",
+	"version": "0.0.0",
+	"description": "Lezer grammar for the Zig language",
+	"keywords": [
+		"zig",
+		"lezer",
+		"grammar"
+	],
+	"files": [
+		"index.js",
+		"lib"
+	],
+	"homepage": "https://github.com/joeltg/codemirror-lang-zig#readme",
+	"bugs": {
+		"url": "https://github.com/joeltg/codemirror-lang-zig/issues"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/joeltg/codemirror-lang-zig.git"
+	},
+	"license": "MIT",
+	"author": "Joel Gustafson",
+	"type": "module",
+	"main": "lib/index.js",
+	"scripts": {
+		"build": "lezer-generator src/zig.grammar --typeScript --output src/index.ts"
+	},
+	"dependencies": {
+		"@lezer/common": "^1.4.0",
+		"@lezer/highlight": "^1.2.3",
+		"@lezer/lr": "^1.4.4"
+	},
+	"devDependencies": {
+		"@lezer/generator": "^1.8.0"
+	}
+}
