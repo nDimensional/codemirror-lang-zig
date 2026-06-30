@@ -54,7 +54,6 @@ ComptimeDecl { kw<"comptime"> Block }
 Decl {
   (kw<"export"> | (kw<"extern"> StringLiteralSingle?) | kw<"inline"> | kw<"noinline">)? FnProto (";" | Block)
   | (kw<"export"> | (kw<"extern"> StringLiteralSingle?))? kw<"threadlocal">? GlobalVarDecl
-  | kw<"usingnamespace"> Expr ";"
 }
 
 FnProto { kw<"fn"> Identifier? ParamDeclList ByteAlign? AddrSpace? CallConv? LinkSection? "!"? TypeExpr }
@@ -178,8 +177,7 @@ TypeExpr { PrefixTypeOp* (ErrorUnionExpr | suffixExpr) }
 ErrorUnionExpr { suffixExpr !curlyRight "!" TypeExpr }
 
 suffixExpr {
-  kw<"async"> primaryTypeExpr (!suffix SuffixOp)* FnCallArgs
-  | !primary primaryTypeExpr (!suffix SuffixOp | FnCallArgs)*
+  !primary primaryTypeExpr (!suffix SuffixOp | FnCallArgs)*
 }
 
 primaryTypeExpr {
@@ -251,7 +249,7 @@ AsmInputItem { "[" Identifier "]" StringLiteral "(" Expr ")" }
 
 AsmClobbers { ":" AsmClobList }
 
-AsmClobList { list<StringLiteral> }
+AsmClobList { list<StringLiteral> | "." InitList }
 
 //// Helper grammar.
 
@@ -328,7 +326,7 @@ AdditionOp { "+" | "-" | "++" | "+%" | "-%" | "+|" | "-|" }
 
 MultiplyOp { "||" | "*" | arithOp<"/"> | "%" | "**" | "*%" | "*|" }
 
-PrefixOp { "!" | "-" | "~" | "-%" | "&" | kw<"try"> | kw<"await"> }
+PrefixOp { "!" | "-" | "~" | "-%" | "&" | kw<"try"> }
 
 PrefixTypeOp {
   "?"

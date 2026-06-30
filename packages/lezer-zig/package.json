@@ -1,6 +1,6 @@
 {
 	"name": "@ndim/lezer-zig",
-	"version": "0.1.0",
+	"version": "0.3.0",
 	"description": "Lezer grammar for the Zig language",
 	"keywords": [
 		"zig",
@@ -30,9 +30,9 @@
 		"build": "lezer-generator src/zig.grammar --typeScript --output src/index.ts"
 	},
 	"dependencies": {
-		"@lezer/common": "^1.4.0",
+		"@lezer/common": "^1.5.2",
 		"@lezer/highlight": "^1.2.3",
-		"@lezer/lr": "^1.4.4"
+		"@lezer/lr": "^1.4.10"
 	},
 	"devDependencies": {
 		"@lezer/generator": "^1.8.0"
